@@ -12,7 +12,7 @@ export const routes: Routes = [
 
     {
         path:'',
-        component:CuestionarioFormComponent,
+        component:DiseCuestiComponent,
         title:'Pagina Form',
     },
     {
