@@ -1,0 +1,107 @@
+/* Estilo para el contenedor principal */
+div.max-w-lg {
+    max-width: 36rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Título del formulario */
+  h2.text-2xl {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  /* Estilo para los inputs */
+  input[type="text"], select {
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    width: 100%;
+  }
+  
+  input[type="text"]:focus, select:focus {
+    outline: none;
+    border-color: #3b82f6;
+  }
+  
+  /* Etiquetas de los campos */
+  label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #4b5563;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Botones */
+  button {
+    padding: 0.5rem 1rem;
+    background-color: #10b981; /* Verde */
+    color: white;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #059669; /* Verde más oscuro */
+  }
+  
+  /* Botón eliminar */
+  button.text-red-500 {
+    background-color: transparent;
+    color: #f87171;
+    border: none;
+  }
+  
+  button.text-red-500:hover {
+    color: #ef4444;
+  }
+  
+  /* Lista de opciones */
+  ul.mt-2 {
+    margin-top: 0.5rem;
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  li.flex.justify-between.items-center {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  li.ml-4 {
+    margin-left: 1rem;
+  }
+  
+  /* Sección de preguntas */
+  ul.mb-2 {
+    margin-bottom: 0.5rem;
+  }
+  
+  h3.text-lg {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Estilo para el botón de guardar */
+  button[type="submit"] {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: #3b82f6; /* Azul */
+    color: white;
+    border-radius: 0.375rem;
+    margin-top: 1rem;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #2563eb; /* Azul más oscuro */
+  }
+  
