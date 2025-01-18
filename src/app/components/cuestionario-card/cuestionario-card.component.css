@@ -56,20 +56,27 @@
   }
   
   /* Card Footer */
-  .card-footer {
-    padding: 16px;
-    text-align: center;
-  }
-  
-  .card-footer button {
-    background-color: #38a169;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  
-  .card-footer button:hover {
-    background-color: #2f855a;
-  }
+.card-footer {
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+  padding: 16px;
+  width: 100%;             
+  text-align: center;      
+}
+
+.btn-env {
+  background-color: #38a169;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  display: inline-block; 
+}
+
+.btn-env:hover {
+  background-color: #2f855a;
+}
+
+
   
