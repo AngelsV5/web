@@ -1,0 +1,91 @@
+<div class="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-md">
+  <h2 class="text-2xl font-semibold mb-4">Diseñar Cuestionario</h2>
+
+  <form (ngSubmit)="guardarCuestionario()">
+    <div class="mb-4">
+      <label for="titulo" class="block text-sm font-medium text-gray-700">Título del Cuestionario:</label>
+      <input 
+        type="text" 
+        id="titulo" 
+        [(ngModel)]="titulo" 
+        name="titulo" 
+        class="mt-1 block w-full p-2 border border-gray-300 rounded-md" 
+        required>
+    </div>
+
+    <div class="mb-4">
+      <label for="pregunta" class="block text-sm font-medium text-gray-700">Nueva Pregunta:</label>
+      <input 
+        type="text" 
+        id="pregunta" 
+        [(ngModel)]="nuevaPregunta" 
+        name="pregunta" 
+        class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-sm font-medium text-gray-700">Tipo de Pregunta:</label>
+      <select 
+        [(ngModel)]="tipoPregunta" 
+        name="tipoPregunta" 
+        class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+        <option value="texto">Texto</option>
+        <option value="checkbox">Checkbox</option>
+        <option value="radio">Radio Button</option>
+      </select>
+    </div>
+
+    <!-- Opciones dinámicas para Checkbox y Radio -->
+    <div *ngIf="tipoPregunta === 'checkbox' || tipoPregunta === 'radio'" class="mb-4">
+      <label for="opcion" class="block text-sm font-medium text-gray-700">Agregar Opciones:</label>
+      <div class="flex items-center">
+        <input 
+          type="text" 
+          id="opcion" 
+          [(ngModel)]="nuevaOpcion" 
+          name="opcion" 
+          class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+        <button 
+          type="button" 
+          (click)="agregarOpcion()" 
+          class="py-2 px-4 bg-green-500 text-white rounded-lg ml-2">Agregar</button>
+      </div>
+
+      <ul class="mt-2">
+        <li *ngFor="let opcion of opciones; let i = index" class="flex justify-between items-center">
+          {{ opcion }}
+          <button 
+            (click)="eliminarOpcion(i)" 
+            class="ml-2 text-red-500">Eliminar</button>
+        </li>
+      </ul>
+    </div>
+
+    <button 
+      type="button" 
+      (click)="agregarPregunta()" 
+      class="py-2 px-4 bg-green-500 text-white rounded-lg">Agregar Pregunta</button>
+
+    <!-- Lista de preguntas -->
+    <div class="mt-6">
+      <h3 class="text-lg font-semibold mb-2">Preguntas del Cuestionario:</h3>
+      <ul>
+        <li *ngFor="let pregunta of preguntas; let i = index" class="mb-2">
+          <div>
+            <strong>{{ pregunta.texto }}</strong> ({{ pregunta.tipo }})
+            <button 
+              (click)="eliminarPregunta(i)" 
+              class="ml-2 text-red-500">Eliminar</button>
+          </div>
+          <ul *ngIf="pregunta.opciones && pregunta.opciones.length > 0" class="mt-1">
+            <li *ngFor="let opcion of pregunta.opciones" class="ml-4">- {{ opcion }}</li>
+          </ul>          
+        </li>
+      </ul>
+    </div>
+
+    <button 
+      type="submit" 
+      class="w-full py-2 px-4 bg-blue-500 text-white rounded-lg mt-4">Guardar Cuestionario</button>
+  </form>
+</div>

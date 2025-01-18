@@ -1,0 +1,32 @@
+<div class="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-md">
+  <h2 class="text-2xl font-semibold mb-4">Cuestionario</h2>
+
+  <form (ngSubmit)="onSubmit()">
+    <div class="mb-4">
+      <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre:</label>
+      <input type="text" id="nombre" [(ngModel)]="nombre" name="nombre" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
+    </div>
+
+    <div class="mb-4">
+      <label for="email" class="block text-sm font-medium text-gray-700">Correo Electrónico:</label>
+      <input type="email" id="email" [(ngModel)]="email" name="email" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
+    </div>
+
+    <div class="mb-4">
+      <label for="pregunta1" class="block text-sm font-medium text-gray-700">¿Te ha gustado el cuestionario?</label>
+      <select id="pregunta1" [(ngModel)]="pregunta1" name="pregunta1" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
+        <option value="" disabled selected>Selecciona una opción</option>
+        <option value="si">Sí</option>
+        <option value="no">No</option>
+        <option value="tal vez">Tal vez</option>
+      </select>
+    </div>
+
+    <div class="mb-4">
+      <label for="pregunta2" class="block text-sm font-medium text-gray-700">¿Qué mejorarías?</label>
+      <textarea id="pregunta2" [(ngModel)]="pregunta2" name="pregunta2" rows="4" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required></textarea>
+    </div>
+
+    <button type="submit" class="w-full py-2 px-4 bg-blue-500 text-white rounded-lg">Enviar</button>
+  </form>
+</div>

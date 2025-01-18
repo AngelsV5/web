@@ -1,0 +1,32 @@
+<!-- <div class="card-container grid grid-cols-3 gap-4">
+  <div *ngFor="let card of datosCuestionarios" class="card">
+    <div class="card-header">
+      <h2 class="text-xl font-semibold">Datos del Cuestionario</h2>
+    </div>
+
+    <div class="card-body">
+      <p><strong>Nombre:</strong> {{ card.nombre }}</p>
+      <p><strong>Correo:</strong> {{ card.email }}</p>
+      <p><strong>¿Te ha gustado el cuestionario?:</strong> {{ card.pregunta1 }}</p>
+      <p><strong>¿Qué mejorarías?:</strong> {{ card.pregunta2 }}</p>
+    </div>
+
+
+
+    <div class="card-footer">
+      <button (click)="compartir(card)">Compartir</button>
+    </div>
+  </div>
+</div> -->
+
+
+<div *ngFor="let card of datosCuestionarios; let i = index" class="card">
+  <h3>{{ card.titulo }}</h3>
+  <ul>
+    <li *ngFor="let pregunta of card.preguntas">
+      {{ pregunta.texto }} ({{ pregunta.tipo }})
+    </li>
+  </ul>
+  <button (click)="compartir(card)">Compartir</button>
+</div>
+
